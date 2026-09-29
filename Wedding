@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hsin Chia & Yi Hsuan Wedding Invitation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        morandi: {
+                            clay: '#d4a373',
+                            clayLight: '#e8cbb1',
+                            sage: '#8da399',
+                            sageLight: '#c2cfc9',
+                            bg: '#faf8f5',
+                            text: '#2c322e',
+                            muted: '#6c7570'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', '"Noto Serif TC"', 'serif'],
+                        tc: ['"Noto Serif TC"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #faf8f5;
+            color: #2c322e;
+            overflow-x: hidden;
+        }
+
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(250, 248, 245, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 163, 119, 0.2);
+        }
+
+        /* Hero Text Gradient Overlay */
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(44, 50, 46, 0.3) 0%, rgba(44, 50, 46, 0.6) 100%);
+        }
+
+        /* Countdown Card Box Shadow */
+        .glow-card {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(212, 163, 115, 0.15), 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(212, 163, 115, 0.15);
+        }
+
+        /* Mobile No-Wrap Protection */
+        .no-wrap {
+            white-space: nowrap !important;
+            display: inline-block;
+        }
+
+        /* V-Card Shadow */
+        .v-card-shadow {
+            box-shadow: 0 20px 40px -15px rgba(141, 163, 153, 0.2);
+        }
+
+        /* Accordion transition */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .accordion-content.open {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #faf8f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4a373;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-morandi-clayLight selection:text-morandi-text">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-cormorant text-2xl font-bold tracking-widest text-morandi-text hover:text-morandi-clay transition-colors">
+                H & Y
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest">
+                <a href="#about" class="text-morandi-text hover:text-morandi-clay transition-colors">關於我們 ABOUT</a>
+                <a href="#details" class="text-morandi-text hover:text-morandi-clay transition-colors">婚禮詳情 DETAILS</a>
+                <a href="#rsvp" class="text-morandi-text hover:text-morandi-clay transition-colors px-4 py-1.5 rounded-full border border-morandi-clay/40 hover:bg-morandi-clay hover:text-white transition-all">出席回函 RSVP</a>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuBtn" class="md:hidden text-morandi-text focus:outline-none" aria-label="Toggle Navigation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-morandi-bg/95 border-b border-morandi-clay/20 px-6 py-4 flex flex-col space-y-4 text-center">
+            <a href="#about" class="mobile-nav-link text-morandi-text hover:text-morandi-clay py-2">關於我們 ABOUT</a>
+            <a href="#details" class="mobile-nav-link text-morandi-text hover:text-morandi-clay py-2">婚禮詳情 DETAILS</a>
+            <a href="#rsvp" class="mobile-nav-link text-morandi-clay font-medium py-2">出席回函 RSVP</a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-1000" style="background-image: url('https://i.postimg.cc/tgWvvRCp/RCH-9738.jpg');"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 px-6 max-w-4xl mx-auto text-white space-y-6 pt-20">
+            <p class="font-cormorant text-xl md:text-2xl tracking-[0.3em] uppercase opacity-90 text-morandi-clayLight">Save The Date</p>
+            <h1 class="font-cormorant text-5xl md:text-7xl lg:text-8xl font-light tracking-wider drop-shadow-md">
+                Hsin Chia <span class="font-serif italic text-3xl md:text-5xl text-morandi-clayLight">&amp;</span> Yi Hsuan
+            </h1>
+            <div class="w-16 h-[1px] bg-morandi-clayLight mx-auto my-6 opacity-70"></div>
+            <p class="text-base md:text-xl font-light tracking-widest leading-relaxed max-w-2xl mx-auto drop-shadow text-stone-100">
+                「這世界大到我們要花很多時間去探索，<br class="hidden sm:inline">但只要有你/妳的地方就是家。」
+            </p>
+            <p class="font-cormorant text-lg md:text-xl tracking-[0.2em] text-morandi-clayLight pt-4">
+                2026 . 12 . 12
+            </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white transition-all duration-300 animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </section>
+
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="font-cormorant text-sm uppercase tracking-[0.3em] text-morandi-clay block mb-2">Counting Down To Our Big Day</span>
+            <h2 class="font-cormorant text-3xl md:text-4xl text-morandi-text tracking-widest">倒數幸福時刻</h2>
+            <div class="w-10 h-[2px] bg-morandi-clay mx-auto mt-3"></div>
+        </div>
+
+        <!-- Timer Grid Container -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto">
+            <!-- Days Card -->
+            <div class="glow-card rounded-2xl p-6 text-center relative flex flex-col justify-center items-center">
+                <span id="days" class="font-cormorant text-4xl md:text-5xl font-bold text-morandi-clay">00</span>
+                <span class="text-xs md:text-sm text-morandi-muted tracking-widest uppercase mt-2">天 / Days</span>
+            </div>
+
+            <!-- Hours Card -->
+            <div class="glow-card rounded-2xl p-6 text-center relative flex flex-col justify-center items-center">
+                <span id="hours" class="font-cormorant text-4xl md:text-5xl font-bold text-morandi-clay">00</span>
+                <span class="text-xs md:text-sm text-morandi-muted tracking-widest uppercase mt-2">小時 / Hours</span>
+            </div>
+
+            <!-- Minutes Card -->
+            <div class="glow-card rounded-2xl p-6 text-center relative flex flex-col justify-center items-center">
+                <span id="minutes" class="font-cormorant text-4xl md:text-5xl font-bold text-morandi-clay">00</span>
+                <span class="text-xs md:text-sm text-morandi-muted tracking-widest uppercase mt-2">分鐘 / Mins</span>
+            </div>
+
+            <!-- Seconds Card -->
+            <div class="glow-card rounded-2xl p-6 text-center relative flex flex-col justify-center items-center">
+                <span id="seconds" class="font-cormorant text-4xl md:text-5xl font-bold text-morandi-clay">00</span>
+                <span class="text-xs md:text-sm text-morandi-muted tracking-widest uppercase mt-2">秒 / Secs</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-morandi-sage/10 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <span class="font-cormorant text-sm uppercase tracking-[0.3em] text-morandi-sage block">Our Story</span>
+            <h2 class="font-cormorant text-3xl md:text-4xl text-morandi-text tracking-widest">攜手走過的每一道風景</h2>
+            <p class="text-morandi-muted leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
+                世界很大，風景無邊。我們走過山海，踏過萬國，最終在彼此的眼中找到了港灣。<br>
+                邀請您來到我們最愛的南方古都，與我們一同分享這份恆久的愛與喜悅。
+            </p>
+        </div>
+    </section>
+
+    <section id="details" class="py
